@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutiger Launcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+            <img src="frutiger_aero_logo.png" alt="Frutiger Launcher logo" class="navbar-logo-img">
+            Frutiger Launcher
+        </a>
+        <ul>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="updates.html">Updates</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </nav>
+
+    <h1 class="title" style="font-weight: 700;">
+        The new Frutiger Aero themed launcher for Android is here!
+    </h1>
+
+    <br>
+    <div class="content-box">
+        <p class="title" style="margin-left: 12px; font-style: italic; font-weight: 700;">Bring back the future!</p>
+        <p>Turn your phone into the retro-futuristic dream of the 2000s with Frutiger Launcher — a launcher inspired by the iconic glossy, optimistic design era of classic operating systems like Windows 7. <br>
+<br>
+Rediscover the look of a future we once imagined: glassy buttons, vivid gradients, soft reflections, nature-inspired interfaces, and that unmistakable sleek aesthetic of the past. <br>
+<br>     With Frutiger Launcher, your device becomes more than a phone — it becomes a nostalgic vision of tomorrow — the promised future we never got.</p>
+        <p>Using Frutiger Launcher you can apply different themes and customize your device to your liking. The currently available themes are:</p>
+    </div>
+
+<div class="theme-gallery">
+    <div class="theme-card">
+        <h3 class="theme-card-label">Frutiger Aero</h3>
+        <img src="Frutiger Aero model.png" alt="Frutiger Aero theme screenshot" class="theme-card-img">
+    </div>
+    <div class="theme-card">
+        <h3 class="theme-card-label">Frutiger Eco</h3>
+        <img src="Screenshot_20260621_155927.png" alt="Frutiger Eco theme screenshot" class="theme-card-img">
+    </div>
+    <div class="theme-card">
+        <h3 class="theme-card-label">Helvetica Aqua Aero</h3>
+        <img src="Screenshot_20260621_160637.png" alt="Helvetica Aqua Aero theme screenshot" class="theme-card-img">
+    </div>
+    <div class="theme-card">
+        <h3 class="theme-card-label">Dorfic</h3>
+        <img src="Dorfic model.png" alt="Dorfic theme screenshot" class="theme-card-img">
+    </div>
+    <div class="theme-card">
+        <h3 class="theme-card-label">Dark Aero</h3>
+        <img src="Dark Aero model.png" alt="Dark Aero theme screenshot" class="theme-card-img">
+    </div>
+    <div class="theme-card">
+        <h3 class="theme-card-label">Frutiger Metro</h3>
+        <img src="Frutiger Metro model.png" alt="Frutiger Metro theme screenshot" class="theme-card-img">
+    </div>
+</div>
+
+<p style="text-align: center;">If you want to customize your UI/background any further, feel free to choose one of the 6 styles the app offers you! (more coming soon)</p>
+
+<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 16px 0 32px;">
+    <img src="Screenshot_20260624_180904.png" alt="App customization screenshot" class="theme-card-img">
+    <img src="Screenshot_20260627_211705.png" alt="App customization screenshot" class="theme-card-img">
+</div>
+    <hr>
+    <footer class="site-footer" style="margin-left: 12px;">
+        <h2 style="font-family: 'ASpaceBold', sans-serif; color: white">Frutiger Launcher</h2>
+        <div class="footer-inner">
+            <div class="footer-contact">
+                <h3 style="font-family: 'ASpaceBold', sans-serif; color: white">Contact</h3>
+                <ul>
+                    <li style="font-family: 'SegoeUILight', 'Segoe UI', sans-serif; color: white;">✉ Email: albertmalicski@gmail.com</li>
+                    <li style="font-family: 'SegoeUILight', 'Segoe UI', sans-serif; color: white;"><i class="fa fa-github"></i><a href="https://github.com/Fl4shy21" target="_blank" style="color: white;"> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="font-family: 'SegoeUILight', 'Segoe UI', sans-serif; color: white">
+            © 2026 Frutiger Launcher. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.nav-toggle').addEventListener('click', function() {
+                document.querySelector('.navbar ul').classList.toggle('nav-open');
+            });
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('lightbox-close');
+            document.querySelectorAll('.theme-card-img').forEach(function(img) {
+                img.addEventListener('click', function() {
+                    lightboxImg.src = this.src;
+                    lightboxImg.alt = this.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        });
+    </script>
+</body>
+</html>
